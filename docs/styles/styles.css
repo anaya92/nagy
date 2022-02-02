@@ -1,12 +1,32 @@
 @font-face {
     font-family: "Matisse";
-    src: url("../fonts/EVA-Matisse_Standard.ttf");
+    src: url("../fonts/EVA-Matisse_Classic.ttf");
     font-style: normal;
     font-weight: 400;
 }
 
+span.compress {
+    display:inline-block;
+    -webkit-transform:scale(0.5,1.5); /* Safari and Chrome */
+    -moz-transform:scale(0.5,1.5); /* Firefox */
+    -ms-transform:scale(0.5,1.5); /* IE 9 */
+    -o-transform:scale(0.5,1.5); /* Opera */
+    transform:scale(0.5,1.5); /* W3C */
+}
+
+span.stretch {
+    display:inline-block;
+    -webkit-transform:scale(2,0.5); /* Safari and Chrome */
+    -moz-transform:scale(2,0.5); /* Firefox */
+    -ms-transform:scale(2,0.5); /* IE 9 */
+    -o-transform:scale(2,0.5); /* Opera */
+    transform:scale(2,0.5); /* W3C */
+}
+
 html {
     font-family: "Matisse";
+    font-stretch: 50%;
+
     color: white;
     background-color: #253D5B;
 }
