@@ -5,28 +5,42 @@
     font-weight: 400;
 }
 
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
 span.compress {
-    display:inline-block;
-    -webkit-transform:scale(0.5,1.5); /* Safari and Chrome */
-    -moz-transform:scale(0.5,1.5); /* Firefox */
-    -ms-transform:scale(0.5,1.5); /* IE 9 */
-    -o-transform:scale(0.5,1.5); /* Opera */
-    transform:scale(0.5,1.5); /* W3C */
+    display: inline-block;
+    -webkit-transform: scale(0.5, 1.5);
+    /* Safari and Chrome */
+    -moz-transform: scale(0.5, 1.5);
+    /* Firefox */
+    -ms-transform: scale(0.5, 1.5);
+    /* IE 9 */
+    -o-transform: scale(0.5, 1.5);
+    /* Opera */
+    transform: scale(0.5, 1.5);
+    /* W3C */
 }
 
 span.stretch {
-    display:inline-block;
-    -webkit-transform:scale(2,0.5); /* Safari and Chrome */
-    -moz-transform:scale(2,0.5); /* Firefox */
-    -ms-transform:scale(2,0.5); /* IE 9 */
-    -o-transform:scale(2,0.5); /* Opera */
-    transform:scale(2,0.5); /* W3C */
+    display: inline-block;
+    -webkit-transform: scale(2, 1);
+    /* Safari and Chrome */
+    -moz-transform: scale(2, 1);
+    /* Firefox */
+    -ms-transform: scale(2, 1);
+    /* IE 9 */
+    -o-transform: scale(2, 1);
+    /* Opera */
+    transform: scale(2, 1);
+    /* W3C */
 }
 
 html {
     font-family: "Matisse";
-    font-stretch: 50%;
-
     color: white;
     background-color: #253D5B;
 }
@@ -34,10 +48,20 @@ html {
 body {
     width: 75%;
     margin: auto;
-
     text-align: center;
+    overflow: visible;
+}
+
+footer {
+    margin: auto;
 }
 
 #canvas {
     margin: auto;
+}
+
+#output {
+    padding-top: 16px;
+    color: red;
+    animation: blinker 1s linear infinite;
 }
