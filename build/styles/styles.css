@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Matisse";
+    src: url("../fonts/EVA-Matisse_Standard.ttf");
+    font-style: normal;
+    font-weight: 400;
+}
+
+html {
+    font-family: "Matisse";
+    color: white;
+    background-color: #253D5B;
+}
+
+body {
+    width: 75%;
+    margin: auto;
+
+    text-align: center;
+}
+
+#canvas {
+    margin: auto;
+}
