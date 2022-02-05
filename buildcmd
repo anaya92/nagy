@@ -1,9 +1,0 @@
-#!python3
-import os
-
-cc = "emcc"
-targets = "csrc/*.c"
-cflags = "-s MAX_WEBGL_VERSION=2"
-output = "docs/index.js"
-
-os.system(cc + " " + targets + " " + cflags + " " + " -o " + output)

@@ -1,5 +1,7 @@
 #include "util.h"
 
+#include "shaders/basic_triangle.h"
+
 sg_buffer buffer;
 sg_shader shader;
 sg_pipeline pipeline;
@@ -23,23 +25,7 @@ void init()
         .data = SG_RANGE(vertices)
     });
 
-    shader = sg_make_shader(&(sg_shader_desc){
-        .vs.source =
-            "attribute vec4 position;\n"
-            "attribute vec4 color0;\n"
-            "out vec4 color;\n"
-            "void main() {\n"
-            "  gl_Position = position;\n"
-            "  color = color0;\n"
-            "}\n",
-        .fs.source =
-            "precision mediump float;\n"
-            "in vec4 color;\n"
-            "out vec4 frag_color;\n"
-            "void main() {\n"
-            "  frag_color = color;\n"
-            "}\n"
-    });
+    shader = sg_make_shader(triangle_shader_desc(sg_query_backend()));
 
     pipeline = sg_make_pipeline(&(sg_pipeline_desc){
         .shader = shader,
