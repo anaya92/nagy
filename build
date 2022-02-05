@@ -1,0 +1,18 @@
+#!python3
+import os
+
+# shader targets
+shaderc = "./butoos/sokol-shdc"
+shaders = ["basic_triangle"]
+slangs = "glsl300es:hlsl5:metal_macos"
+
+for shader in shaders:
+    os.system(shaderc + " --input " + "ssrc/" + shader + ".skshd" + " --output " + " csrc/shaders/" + shader + ".h" + " --slang " + slangs)
+
+# c targets
+cc = "emcc"
+targets = "csrc/*.c"
+cflags = "-s MAX_WEBGL_VERSION=2"
+output = "docs/index.js"
+
+os.system(cc + " " + targets + " " + cflags + " " + " -o " + output)
